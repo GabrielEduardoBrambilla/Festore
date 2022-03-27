@@ -25,12 +25,25 @@ session_start();
                     <h3 class="title has-text-grey">Sistema de Cadastro d'Usuario</h3>
                     
                     <?php
+                    if(isset($_SESSION['not_allowed_blanc_fields'])){ 
+                    if($_SESSION['not_allowed_blanc_fields']){
+                    ?>
+                    <div class="notification is-danger">
+                      <p>Campos obrigatorios em branco!</p>
+                      <p>Preencha-os, tente novamente</p>
+                    </div>
+                    <?php
+                    }
+                    }
+                    unset($_SESSION['not_allowed_blanc_fields']);                    
+                    ?>
+                     <?php
                     if(isset($_SESSION['successfully_registered'])){ 
-                    if($_SESSION['successfully_registered'] === TRUE){
+                    if($_SESSION['successfully_registered']){
                     ?>
                     <div class="notification is-success">
-                      <p>Cadastro efetuado!</p>
-                      <p>Faça login informando o seu usuário e senha <a href="login.php">aqui</a></p>
+                      <p>Novo usuario registrado com sucesso!</p>
+                      <p><a href="index.php">Faça login aqui</a></p>
                     </div>
                     <?php
                     }
@@ -50,9 +63,21 @@ session_start();
                     }
                     unset($_SESSION['username_in_use'])                    
                     ?>
-                   
+                    
+                    <?php
+                    if(isset($_SESSION['age_not_accepted'])){
+                    ?>
+                    <div class="notification is-info">
+                        <p>O idade informada não é aceita. Informe outro valor e tente novamente.</p>
+                    </div>
+                    <?php
+                    
+                    }
+                    unset($_SESSION['age_not_accepted'])                    
+                    ?>
+
                     <div class="box">
-                        <form action="register_DB.php" method="POST">
+                        <form action="register_DB.php" method="POST" >
                             <div class="field">
                                 <div class="control">
                                     <input name="userName" type="text" class="input is-large" placeholder="Nome de Usuario" autofocus>
@@ -60,7 +85,7 @@ session_start();
                             </div>
                             <div class="field">
                                 <div class="control">
-                                    <input name="dateOfBirth" type="text" class="input is-large" placeholder="Date de Nascimento">
+                                    <input name="age" type="number" class="input is-large" placeholder="Idade">
                                 </div>
                             </div>
                             <div class="field">
@@ -68,12 +93,11 @@ session_start();
                                     <input name="password" class="input is-large" type="password" placeholder="Senha">
                                 </div>
                             </div>
-                            <div class="field">
-                                <div class="control">
-                                    <input name="profilePicture" class="input is-large" type="update" placeholder="profile picture {LATER}">
-                                </div>
-                            </div>
-                            <button type="submit" class="button is-block is-link is-large is-fullwidth">Cadastrar</button>
+                            <!-- <div  class="field">
+                                <input name="file" enctype="multipart/form-data" type="file" id="profilePicture"  accept="image/*">
+                                <label for="profilePicture">Chose file</label>
+                            </div> -->
+                            <button type="submit" name="register"class="button is-block is-link is-large is-fullwidth">Cadastrar</button>
                             <hr>
                             <button type="submit" class="button is-block is-link is-large is-fullwidth"><a href="index.php">Pagina de login</a></br></button>
                         </form>

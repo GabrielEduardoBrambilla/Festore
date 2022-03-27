@@ -17,7 +17,7 @@ $row = mysqli_num_rows($result);
 
 if($row == 1){
   $_SESSION['user'] = $user;
-  header('Location: panel.php');
+  header('Location: main_panel.php');
   exit();
 }else{
   $_SESSION['unauthenticated'] = true;
