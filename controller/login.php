@@ -1,6 +1,6 @@
 <?php
 session_start();
-include('conection_DB.php');
+include('../model/conection_DB.php');
 
 if(empty($_POST['user']) || empty($_POST['password'])){
   header('Location: index.php');
@@ -17,7 +17,7 @@ $row = mysqli_num_rows($result);
 
 if($row == 1){
   $_SESSION['user'] = $user;
-  header('Location: main_panel.php');
+  header('Location: ../view/main_panel.php');
   exit();
 }else{
   $_SESSION['unauthenticated'] = true;

@@ -9,7 +9,7 @@ session_start();
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Sistema de Login - PHP + MySQL - Canal TI</title>
+    <title>Login Festore</title>
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
     <link rel="stylesheet" href="css/bulma.min.css" />
     <link rel="stylesheet" type="text/css" href="css/login.css">
@@ -33,7 +33,7 @@ session_start();
                     unset($_SESSION['unauthenticated']);
                     ?>
                     <div class="box">
-                        <form action="login.php" method="POST">
+                        <form action="../controller/login.php" method="POST">
                             <div class="field">
                                 <div class="control">
                                     <input name="user" type="text" class="input is-medium" placeholder="Seu usuário" autofocus="">

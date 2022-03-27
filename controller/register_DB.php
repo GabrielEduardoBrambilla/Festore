@@ -1,6 +1,6 @@
 <?php
 session_start();
-include("conection_DB.php");
+include("../model/conection_DB.php");
 $_SESSION['username_in_use'] = false;
 $_SESSION['successfully_registered'] = false;
 
