@@ -10,7 +10,7 @@
         <title>Festore - Página de Festas</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="navbar_styles.css">
+        <link rel="stylesheet" href="css/navbar_styles.css">
         <link href="https://fonts.googleapis.com/css?family=Montserrat:500&display=swap" rel="stylesheet">
     </head>
     <body>
@@ -46,7 +46,7 @@
         
 
 
-        <script type="text/javascript" src="navbar_mobile_view.js"></script>
+        <script type="text/javascript" src="js/navbar_mobile_view.js"></script>
     </body>
 </html>
 

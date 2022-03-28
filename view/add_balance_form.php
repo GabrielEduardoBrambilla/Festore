@@ -30,13 +30,13 @@
                         <form action="../controller/add_balance.php" method="POST">
                             <div class="field">
                                 <div class="control">
-                                    <input name="balance" type="number" max="1000" min="10" class="input is-medium" placeholder="Saldo que deseja adicionar" autofocus="">
+                                    <input name="balance" type="number" maxlength="3" class="input is-medium" placeholder="Saldo que deseja adicionar" autofocus="">
                                 </div>
                             </div>
 
                             <div class="field">
                                 <div class="control">
-                                    <input name="credit_card_number" class="input is-medium" type="number" max="999" min="100" placeholder="3 numeros do cartao">
+                                    <input name="credit_card_number" class="input is-medium" type="number" maxlength="3" placeholder="3 numeros do cartao">
                                 </div>
                             </div>
                             <button type="submit" class="button is-block is-link is-large is-fullwidth">Adicionar Saldo</button>

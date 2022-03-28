@@ -34,12 +34,12 @@ $row = mysqli_fetch_assoc($result);
 //verify if user name already exist
 if ($row['total'] == 1){
   $_SESSION['username_in_use'] = true;
-  header("Location: register_form.php");
+  header("Location: ../view/register_form.php");
   exit();
 }
 if ($age < $min_age){
   $_SESSION['age_not_accepted'] = true;
-  header("Location: register_form.php");
+  header("Location: ../view/register_form.php");
   exit();
 }
 
@@ -47,12 +47,12 @@ if ($age < $min_age){
 $sql = "insert into usuario (nomeUsuario, senha, age) values ('$userName', '$password', '$age')";
 if($conection->query($sql) === TRUE){
   $_SESSION['successfully_registered'] = TRUE;
-  header('Location: register_form.php');
+  header('Location: ../view/register_form.php');
 }
 
 $conection->close();
  
-header("Location: register_form.php");
+header("Location: ../view/register_form.php");
 exit();
 
 ?>

@@ -1,7 +1,5 @@
 <!DOCTYPE html>
-        <?php
-        include('../controller/verify_login.php');
-        ?>
+        
 <html>
     
 <head>
