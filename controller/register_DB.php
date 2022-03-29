@@ -20,25 +20,18 @@ if(isset($_POST['register']))
     header("Location: register_form.php");
     exit();
   }
-  }
-  else{
-  header("Location: register_form.php");
-  exit();
+
 }
+else
+  {
+    header("Location: register_form.php");
+    exit();
+  }
 
 // prepar variable to verify if user name already exist
 $sql = "SELECT count(*) as total from usuario where nomeUsuario ='$userName' ";
 $result = mysqli_query($conection, $sql);
 $row = mysqli_fetch_assoc($result);
-
-
-
-  
-
-
-
-
-
 
 //verify if user name already exist
 if ($row['total'] == 1){

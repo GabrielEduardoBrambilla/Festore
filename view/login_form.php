@@ -18,16 +18,7 @@
             <div class="container has-text-centered">
                 <div class="column is-4 is-offset-4">
                     <h3 class="title has-text-grey">Login Festore</h3>
-                    <?php
-                        if(isset($_SESSION['unauthenticated'])):
-                    ?>
-                    <div class="notification is-danger">
-                      <p>ERRO: Usuário ou senha inválidos.</p>
-                    </div>
-                    <?php
-                    endif;
-                    unset($_SESSION['unauthenticated']);
-                    ?>
+                    
                     <div class="box">
                         <form action="../controller/login.php" method="POST">
                             <div class="field">

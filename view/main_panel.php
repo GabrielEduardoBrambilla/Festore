@@ -24,8 +24,9 @@
             <nav>
                 
                 <ul class="nav__links">
-                    <li><a href="#">Services</a></li>
-                    <li><a href="#">Projects</a></li>
+                    <li><a href="#">Perfil</a></li>
+                    <li><a href="party_form.php">Criar Festa</a></li>
+                    <li><a href="../view/add_balance_form.php">Adicionar Saldo</a></li>
                     <li><a href="logout.php">Logout</a></li>
                 </ul>
             </nav> 
@@ -43,7 +44,8 @@
             <div class="overlay__content">
                 <a href="#">Perfil</a>
                 <a href="#"><?php echo "R$ " . strtoupper($_SESSION['last_updated_balance'])?></a>
-                <a href="../controller/add_balance_form.php">Adicionar Saldo</a>
+                <a href="party_form.php">Criar Festa</a>
+                <a href="../view/add_balance_form.php">Adicionar Saldo</a>
                 <a href="../view/logout.php">Logout</a>
             </div>
         </div>
