@@ -1,8 +1,13 @@
 <!DOCTYPE html>
         <?php
         include('../controller/verify_login.php');
+        if(! isset($_SESSION['balance_safe_guard']))
+        {
+            include('../controller/get_balance.php');
+            echo $_SESSION['last_updated_balance'];
+            exit();
+        }
         ?>
-
         <h2>Login realizado com sucesso  <?php echo $_SESSION['user']?></h2>
     <head>
         <meta charset="utf-8">
@@ -17,27 +22,29 @@
         <header>
             <a class="logo" href="/"><img src="images/logo.svg" alt="logo"></a>
             <nav>
+                
                 <ul class="nav__links">
                     <li><a href="#">Services</a></li>
                     <li><a href="#">Projects</a></li>
                     <li><a href="logout.php">Logout</a></li>
                 </ul>
-            </nav>
-            <ul class="nav__links">
-                    <li><a href="add_balance_form.php">SALDO </a></li>
-            </ul> -->
-            <a class="userprofile" href="#">SALDO</a>
-            <a class="userprofile" href="#"><?php echo $_SESSION['user']?></a>
+            </nav> 
+            <div>
+                <a class="simple_balance" href="add_balance_form.php"><?php echo "R$ " . strtoupper($_SESSION['last_updated_balance'])?></a>
+                <a class="userprofile" href="#"><?php echo strtoupper($_SESSION['user'])?> </a>
+            </div>
             <p class="menu userprofile">Menu</p>
+           
         </header>
 
         <!-- mobile version menu overlay -->
         <div class="overlay">
             <a class="close">&times;</a>
             <div class="overlay__content">
-                <a href="#">Festas</a>
-                <a href="../controller/add_balance_form.php">Saldo</a>
-                <a href="logout.php">Logout</a>
+                <a href="#">Perfil</a>
+                <a href="#"><?php echo "R$ " . strtoupper($_SESSION['last_updated_balance'])?></a>
+                <a href="../controller/add_balance_form.php">Adicionar Saldo</a>
+                <a href="../view/logout.php">Logout</a>
             </div>
         </div>
         

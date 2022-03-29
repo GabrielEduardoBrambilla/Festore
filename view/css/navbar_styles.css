@@ -16,8 +16,13 @@ header {
   cursor: pointer;
 }
 
+a {
+  text-decoration: none;
+}
+
 .nav__links a,
 .userprofile,
+.simple_balance,
 .overlay__content a {
   font-family: 'Montserrat', sans-serif;
   font-weight: 500;
@@ -50,9 +55,18 @@ header {
   cursor: pointer;
   transition: background-color 0.3s ease 0s;
 }
-
 .userprofile:hover {
   background-color: rgba(0, 136, 169, 0.8);
+}
+
+.simple_balance {
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease 0s;
+}
+.simple_balance:hover {
+  color: rgba(228, 71, 128, 0.8);
 }
 
 /* Mobile Nav */
@@ -117,7 +131,8 @@ header {
 
 @media only screen and (max-width: 800px) {
   .nav__links,
-  .userprofile {
+  .userprofile,
+  .simple_balance {
     display: none;
   }
   .menu {

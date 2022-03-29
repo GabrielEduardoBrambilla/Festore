@@ -39,7 +39,7 @@
                                     <input name="credit_card_number" class="input is-medium" type="number" maxlength="3" placeholder="3 numeros do cartao">
                                 </div>
                             </div>
-                            <button type="submit" class="button is-block is-link is-large is-fullwidth">Adicionar Saldo</button>
+                            <button name="add_balance_btn" type="submit" class="button is-block is-link is-large is-fullwidth">Adicionar Saldo</button>
                         </form>
                         <small>
                           <script>

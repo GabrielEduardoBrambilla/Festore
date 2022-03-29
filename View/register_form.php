@@ -93,10 +93,10 @@ session_start();
                                     <input name="password" class="input is-large" type="password" placeholder="Senha">
                                 </div>
                             </div>
-                            <!-- <div  class="field">
-                                <input name="file" enctype="multipart/form-data" type="file" id="profilePicture"  accept="image/*">
+                            <div  class="field">
+                                <input name="uploadfile" enctype="multipart/form-data" type="file" id="profilePicture"  accept="image/*">
                                 <label for="profilePicture">Chose file</label>
-                            </div> -->
+                            </div>
                             <button type="submit" name="register"class="button is-block is-link is-large is-fullwidth">Cadastrar</button>
                             <hr>
                             <button type="submit" class="button is-block is-link is-large is-fullwidth"><a href="../view/login_form.php">Pagina de login</a></br></button>
