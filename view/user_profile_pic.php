@@ -7,7 +7,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Foto de Perfil Festa</title>
+    <title>Confirmar Endereco Festa</title>
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
     <link rel="stylesheet" href="css/bulma.min.css" />
     <link rel="stylesheet" type="text/css" href="css/login.css">
@@ -19,7 +19,7 @@
         <div class="hero-body">
             <div class="container has-text-centered">
                 <div class="column is-4 is-offset-4">
-                    <h3 class="title is-2 has-text-grey">Foto de Perfil</h3>
+                    <h3 class="title is-2 has-text-grey">Foto de Perfil Usuario</h3>
                                        
                     <div class="box">
                         <div class="field">
@@ -30,8 +30,8 @@
                                 enctype="multipart/form-data"
                                 >
                                     <h3  class="title is-4 has-text-grey">Foto de perfil</h3>
-                                    <input type="file" name='profile_img' accept="image/*" name="file" /> 
-                                    <button type="submit" name="upload_profile" class="button is-block is-link is-large is-fullwidth">upload</button>
+                                    <input type="file" name='user_profile_img' accept="image/*" name="file" /> 
+                                    <button type="submit" name="user_upload_profile" class="button is-block is-link is-large is-fullwidth">upload</button>
 
                                     
                                 </form>

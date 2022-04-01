@@ -44,19 +44,19 @@ a {
 }
 
 .nav__links li a:hover {
-  color: #0088a9;
+  color: #7ed957;
 }
 
 .userprofile {
   padding: 9px 25px;
-  background-color: rgba(0, 136, 169, 1);
+  background-color: rgba(126, 217, 87, 0.8);
   border: none;
   border-radius: 50px;
   cursor: pointer;
   transition: background-color 0.3s ease 0s;
 }
 .userprofile:hover {
-  background-color: rgba(0, 136, 169, 0.8);
+  background-color: rgba(126, 217, 87, 0.6);
 }
 
 .simple_balance {
@@ -108,7 +108,7 @@ a {
 
 .overlay a:hover,
 .overlay a:focus {
-  color: #0088a9;
+  color: #6de03b;
 }
 .overlay .close {
   position: absolute;
@@ -129,7 +129,6 @@ a {
   }
 }
 @media only screen and (max-width: 990px) {
-  .nav__links,
   .simple_balance {
     display: none;
     opacity: 0;

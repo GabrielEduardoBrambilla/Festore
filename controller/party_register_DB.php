@@ -17,11 +17,13 @@
     $cidade = $_SESSION['cidade'];
     $estado = $_SESSION['estado'];
     $numero_casa = $_SESSION['numero_casa'];
+
     $sql = "Insert into endereco (logradouro, bairro, cidade, estado, CEP, numero_local) values ('$rua','$bairro','$cidade', '$estado','$cep', '$numero_casa')";
+
     if($conection->query($sql) === TRUE){
-    $sql = "SELECT id_Endereco from endereco where CEP = '$cep';";
-    $result = mysqli_query($conection, $sql);
-    $id_Endereco = mysqli_fetch_array($result, MYSQLI_NUM);
+      $sql = "SELECT id_Endereco from endereco where CEP = '$cep';";
+      $result = mysqli_query($conection, $sql);
+      $id_Endereco = mysqli_fetch_array($result, MYSQLI_NUM);
     }
     
 

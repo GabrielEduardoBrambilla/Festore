@@ -1,6 +1,7 @@
 <!DOCTYPE html>
         <?php
         include('../controller/verify_login.php');
+        include('../model/conection_DB.php');
         if(! isset($_SESSION['balance_safe_guard']))
         {
             include('../controller/get_balance.php');
@@ -8,7 +9,7 @@
             exit();
         }
         ?>
-        <h2>Login realizado com sucesso  <?php echo $_SESSION['user']?></h2>
+        <h2><center> Login realizado com sucesso  <?php echo $_SESSION['user']?></center></h2>
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -20,11 +21,11 @@
     </head>
     <body>
         <header>
-            <a class="logo" href="/"><img src="images/logo.svg" alt="logo"></a>
+            <a class="logo" href="../view/main_panel.php"><img src="images/logo_new.png" alt="logo"></a>
             <nav>
                 
                 <ul class="nav__links">
-                    <li><a href="#">Perfil</a></li>
+                    <li><a href="user_profile_pic.php">Perfil</a></li>
                     <li><a href="party_form.php">Criar Festa</a></li>
                     <li><a href="../view/add_balance_form.php">Adicionar Saldo</a></li>
                     <li><a href="../controller/logout.php">Logout</a></li>
@@ -32,10 +33,9 @@
             </nav> 
             <div>
                 <a class="simple_balance" href="add_balance_form.php"><?php echo "R$ " . strtoupper($_SESSION['last_updated_balance'])?></a>
-                <a class="userprofile" href="#"><?php echo strtoupper($_SESSION['user'])?> </a>
+                <a class="userprofile" href="user_profile_pic.php"><?php echo strtoupper($_SESSION['user'])?> </a>
             </div>
-            <p class="menu userprofile">Menu</p>
-           
+            <p class="menu userprofile"><a href="user_profile_pic.php"></a> Menu</p>
         </header>
 
         <!-- mobile version menu overlay -->
@@ -49,7 +49,21 @@
                 <a href="../controller/logout.php">Logout</a>
             </div>
         </div>
-        
+
+    <!-- try to show pictures from data base -->
+        <div class="box"> <img src="<?php 
+        $userName = $_SESSION['user'];
+        $sql = "SELECT id_Usuario as id_Usuario from usuario where nomeUsuario ='$userName' ";
+        $result = mysqli_query($conection, $sql);
+        $id_Usuario = mysqli_fetch_array($result, MYSQLI_NUM);
+
+        $sql = "SELECT fotoDePerfilUsuario from usuario where nomeUsuario ='$id_Usuario[0]' ";
+        $result = mysqli_query($conection, $sql);
+        if($row = mysqli_fetch_assoc($result)){
+            echo $row["fotoDePerfilUsuario"];
+        }       
+        echo "uploads/adm-profile_pic-festore.png";
+        ?>" alt=""> </div>
 
 
         
