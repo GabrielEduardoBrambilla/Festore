@@ -1,5 +1,5 @@
 <?php
-        include('../controller/verify_login.php');
+        include('../public_html/controller/verify_login.php');
         $user =  $_SESSION['user'];
 ?>
 
@@ -25,7 +25,7 @@
                     <h3 class="title has-text-grey">Sistema de Publicação de Festas</h3>
                     
                     <div class="box">
-                        <form action="../controller/party_register_DB.php" method="POST" >
+                        <form action="../public_html/controller/party_register_DB.php" method="POST" >
                             <div class="field">
                                 <div class="control">
                                     <input name="partyName" type="text" class="input is-large" placeholder="Nome da Festa" autofocus>
@@ -48,7 +48,7 @@
                             <hr>
 
                             <button type="submit" class="button is-block is-link is-large is-fullwidth">
-                                <small><a href="../view/main_panel.php">Voltar</a>                                   
+                                <small><a href="../public_html/view/main_panel.php">Voltar</a>                                   
                                 </small></br>
                             </button>
                         </form>

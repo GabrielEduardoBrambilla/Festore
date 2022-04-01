@@ -1,5 +1,5 @@
 <?php
-        include('../controller/verify_login.php');
+        include('../public_html/controller/verify_login.php');
         $user =  $_SESSION['user'];
 
 ?>
@@ -31,7 +31,7 @@
                         <div class="field">
                             <div class="control">
                                 <form
-                                action="../controller/party_register_DB.php"
+                                action="../public_html/controller/party_register_DB.php"
                                 method="post"
                                 enctype="multipart/form-data"
                                 >

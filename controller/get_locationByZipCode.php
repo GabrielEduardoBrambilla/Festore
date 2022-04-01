@@ -1,6 +1,6 @@
 <?php
 
-include('../controller/verify_login.php');
+include('../public_html/controller/verify_login.php');
 $_SESSION['unavailable_cep'] = false;
 
 function get_endereco($cep){
@@ -35,13 +35,13 @@ if(isset($_POST['second_zip']))
         $_SESSION['cidade'] = $localidade_xml->asXML();
         $_SESSION['estado'] = $estado_xml->asXML();
         $_SESSION['numero_casa'] = $_POST['house_number'];
-        header('Location: ../view/party_form_pictures.html');
+        header('Location: ../public_html/view/party_form_pictures.html');
         exit();
       }
       else
       { 
         $_SESSION['unavailable_cep'] == TRUE;
-        header('Location: ../view/party_form_zipCode.php');
+        header('Location: ../public_html/view/party_form_zipCode.php');
         exit();
       }  
     } 

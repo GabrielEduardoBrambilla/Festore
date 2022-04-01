@@ -36,7 +36,7 @@
                         <div class="field">
                             <div class="control">
                                 <form
-                                action="../controller/datetime-local.php"
+                                action="../public_html/controller/datetime-local.php"
                                 method="post"
                                 enctype="multipart/form-data"
                                 >
