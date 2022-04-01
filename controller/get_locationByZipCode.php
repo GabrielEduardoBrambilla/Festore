@@ -27,11 +27,13 @@ if(isset($_POST['second_zip']))
         $logradouro_xml = $endereco->logradouro;
         $bairro_xml = $endereco->bairro;
         $localidade_xml = $endereco->localidade;
+        $estado_xml = $endereco->uf;
 
         $_SESSION['cep'] = $cep_xml->asXML();
         $_SESSION['rua'] = $logradouro_xml->asXML();
         $_SESSION['bairro'] = $bairro_xml->asXML();
         $_SESSION['cidade'] = $localidade_xml->asXML();
+        $_SESSION['estado'] = $estado_xml->asXML();
         $_SESSION['numero_casa'] = $_POST['house_number'];
         header('Location: ../view/party_form_pictures.html');
         exit();

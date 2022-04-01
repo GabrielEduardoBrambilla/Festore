@@ -4,21 +4,36 @@
   include('../controller/get_locationByZipCode.php');
 
   if(isset($_POST['party_confirmed'])){
-
+    // get user id
     $userName = $_SESSION['user'];
     $sql = "SELECT id_Usuario as id_Usuario from usuario where nomeUsuario ='$userName' ";
     $result = mysqli_query($conection, $sql);
     $id_Usuario = mysqli_fetch_array($result, MYSQLI_NUM);
+    
+    //getting endereco registered and getting endereco_id right after
+    $cep = $_SESSION['cep'];
+    $rua = $_SESSION['rua'];
+    $bairro = $_SESSION['bairro'];
+    $cidade = $_SESSION['cidade'];
+    $estado = $_SESSION['estado'];
+    $numero_casa = $_SESSION['numero_casa'];
+    $sql = "Insert into endereco (logradouro, bairro, cidade, estado, CEP, numero_local) values ('$rua','$bairro','$cidade', '$estado','$cep', '$numero_casa')";
+    if($conection->query($sql) === TRUE){
+    $sql = "SELECT id_Endereco from endereco where CEP = '$cep';";
+    $result = mysqli_query($conection, $sql);
+    $id_Endereco = mysqli_fetch_array($result, MYSQLI_NUM);
+    }
+    
 
     $partyName = $_SESSION['partyName'];
     $description = $_SESSION['description'];
     $ticket_price = $_SESSION['ticket_price'];
-    $data = $_SESSION['data'];
+    $date = $_SESSION['data'];
     $time = $_SESSION['time'];
     $party_background_img = $_SESSION['party_background_img'];
     $party_profile_img = $_SESSION['party_profile_img'];
-
-    $sql = "Insert into party (nomeFesta, descricao, fotoPerfilFesta, fotoBackground, precoIngresso, dono_Festa, dataEhora) values ('$partyName','$description','$party_profile_img','$party_background_img','$ticket_price','$id_Usuario[0]','$time$time')";
+    
+    $sql = "Insert into party (nomeFesta, descricao, fotoPerfilFesta, fotoBackground, precoIngresso, dono_Festa, dataEhora, id_Endereco) values ('$partyName','$description','$party_profile_img','$party_background_img','$ticket_price','$id_Usuario[0]','$date$time', '$id_Endereco[0]')";
 
     if($conection->query($sql) === TRUE){
       header('Location: ../view/main_panel.php');

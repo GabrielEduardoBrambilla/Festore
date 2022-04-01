@@ -4,7 +4,7 @@ include('../model/conection_DB.php');
 if(isset($_POST['upload_profile'])){   
    
    $partyName = $_SESSION['partyName'];  
-   $file = $partyName."profile_img"."-".$_FILES['profile_img']['name'];
+   $file = $partyName."-profile_img"."-".$_FILES['profile_img']['name'];
       $file_loc = $_FILES['profile_img']['tmp_name'];
    $file_type = $_FILES['profile_img']['type'];
 
@@ -18,7 +18,9 @@ if(isset($_POST['upload_profile'])){
    $file_path = $folder.$final_file;
    
    if(move_uploaded_file($file_loc,$file_path))
-   {      
+   {    
+    $_SESSION['party_profile_img'] = $file_path;   
+    
     header("Location: ../view/party_form_pictures_background.html");
     exit();
    }
@@ -26,7 +28,7 @@ if(isset($_POST['upload_profile'])){
  if(isset($_POST['upload_background']))
       {   
         $partyName = $_SESSION['partyName'];  
-      $file = $partyName."background_img"."-".$_FILES['background_img']['name'];
+      $file = $partyName."-background_img"."-".$_FILES['background_img']['name'];
          $file_loc = $_FILES['background_img']['tmp_name'];
       $file_type = $_FILES['background_img']['type'];
 
