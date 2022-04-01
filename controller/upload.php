@@ -3,9 +3,9 @@ include('verify_login.php');
 include('../model/conection_DB.php');
 if(isset($_POST['upload_profile'])){   
    
-   $userName = $_SESSION['user'];  
-   echo $userName;
-   $file = $userName."-".$_FILES['profile_img']['name'];
+   $partyName = $_SESSION['partyName'];  
+   echo $partyName;
+   $file = $partyName."-".$_FILES['profile_img']['name'];
       $file_loc = $_FILES['profile_img']['tmp_name'];
    $file_type = $_FILES['profile_img']['type'];
 
@@ -20,7 +20,7 @@ if(isset($_POST['upload_profile'])){
    if(move_uploaded_file($file_loc,$folder.$final_file))
    {
       
-   $sql="UPDATE usuario set fotoDePerfilUsuario = '$folder$final_file' where nomeUsuario = '$userName'  ";
+   $sql="UPDATE usuario set fotoDePerfilUsuario = '$folder$final_file' where nomeUsuario = '$partyName'  ";
    mysqli_query($conection,$sql);
    
    header("Location: ../view/party_form_pictures_background.html");
@@ -51,7 +51,7 @@ if(isset($_POST['upload_profile'])){
       $sql="UPDATE usuario set fotoDePerfilUsuario = '$folder$final_file' where nomeUsuario = '$userName'  ";
       mysqli_query($conection,$sql);
       
-      header("Location: ../view/party_register_confimation.html");
+      header("Location: ../view/party_date.php");
       exit();
             
       
