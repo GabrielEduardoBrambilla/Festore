@@ -43,7 +43,7 @@ session_start();
                     ?>
                     <div class="notification is-success">
                       <p>Novo usuario registrado com sucesso!</p>
-                      <p><a href="in../view/login_form.php">Faça login aqui</a></p>
+                      <p><a href="in../view/index.html">Faça login aqui</a></p>
                     </div>
                     <?php
                     }
@@ -99,7 +99,7 @@ session_start();
                             </div>
                             <button type="submit" name="register"class="button is-block is-link is-large is-fullwidth">Cadastrar</button>
                             <hr>
-                            <button type="submit" class="button is-block is-link is-large is-fullwidth"><a href="../view/login_form.php">Pagina de login</a></br></button>
+                            <div type="submit" class="button is-block is-link is-large is-fullwidth"><a href="../view/index.html">Pagina de login</a></br></div>
                         </form>
                         
                     </div>

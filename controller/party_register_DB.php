@@ -9,7 +9,10 @@
       $partyName = mysqli_real_escape_string($conection, trim($_POST['partyName']));
       $description = mysqli_real_escape_string($conection, trim($_POST['description']));
       $ticket_price = mysqli_real_escape_string($conection,trim($_POST['ticket_price']));
-      echo "inside 2 iF-";
+      
+      $_SESSION['partyName'] = $partyName;
+      $_SESSION['description'] = $description;
+      $_SESSION['ticket_price'] = $ticket_price;
 
       $first_page_variable = true;
   

@@ -2,8 +2,11 @@
 session_start();
 include('../model/conection_DB.php');
 
+if(isset($_SESSION['user'])){
+  include('../controller/logout.php');
+}
 if(empty($_POST['user']) || empty($_POST['password'])){
-  header('Location: ../view/login_form.php');
+  header('Location: ../view/index.html');
   exit();
 }
 
@@ -21,6 +24,6 @@ if($row == 1){
   exit();
 }else{
   $_SESSION['unauthenticated'] = true;
-  header('Location: ../view/login_form.php');
+  header('Location: ../view/index.html');
   exit();
 }

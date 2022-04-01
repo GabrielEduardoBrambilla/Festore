@@ -1,3 +1,8 @@
+<?php
+        include('../controller/verify_login.php');
+        $user =  $_SESSION['user'];
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,8 +28,8 @@
                         <form action="../controller/get_locationByZipCode.php" method="POST">
                             <div class="field">
                                 <div class="control">
-                                    <input class="input is-large" placeholder="CEP" name="cep" type="text" id="cep" value="" size="10" minlength="8" maxlength="9"
-                                     onblur="pesquisacep(this.value);" /></label><br />                    
+                                    <input class="input is-large" placeholder="CEP" name="cep" type="text" id="cep" value="" size="10" minlength="8" maxlength="8"
+                                      /></label><br />                    
                                 </div>
                             </div>
                             <button type="submit" name='second_zip'class="button is-block is-link is-large is-fullwidth">Proximo</button>

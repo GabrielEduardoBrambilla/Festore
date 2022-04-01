@@ -3,11 +3,11 @@
 
 <html lang="en">
 <head>
-  
+
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Confirmar Endereco Festa</title>
+    <title>Confirmar Informações</title>
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
     <link rel="stylesheet" href="css/bulma.min.css" />
     <link rel="stylesheet" type="text/css" href="css/login.css">
@@ -19,29 +19,26 @@
         <div class="hero-body">
             <div class="container has-text-centered">
                 <div class="column is-4 is-offset-4">
-                    <h3 class="title is-2 has-text-grey">Foto de Capa</h3>
+                    <h3 class="title is-2 has-text-grey">Foto de Perfil</h3>
                                        
                     <div class="box">
                         <div class="field">
                             <div class="control">
                                 <form
-                                action="../controller/upload.php"
+                                action="../controller/register_party_DB.php"
                                 method="post"
                                 enctype="multipart/form-data"
                                 >
-                                    <h3  class="title is-4 has-text-grey">Foto de capa</h3>
-                                    <input type="file"name="background_img" accept="image/*" name="file" /> 
-                                    <button type="submit" name="upload_background" class="button is-block is-link is-large is-fullwidth">upload</button>
+                                    <h3  class="title is-4 has-text-grey">Confirmar Informações da festa</h3>
+                                    <input type="file" accept="image/*" name="file" /> 
+                                     <button type="submit" name="upload_profile" class="button is-block is-link is-large is-fullwidth">upload</button>
+
+                                    
                                 </form>
                             </div>
                         </div>
                     </div>
-                                        <small>
-                                    <script>
-                                        document.write('<a href="' + document.referrer + '">Voltar</a>');
-                                    </script>
-                                </small></br>
-                      
+
                     </div>
                 </div>
             </div>

@@ -1,5 +1,6 @@
 <?php
         include('../controller/verify_login.php');
+        $user =  $_SESSION['user'];
 ?>
 
 <!DOCTYPE html>

@@ -27,7 +27,7 @@
                     <li><a href="#">Perfil</a></li>
                     <li><a href="party_form.php">Criar Festa</a></li>
                     <li><a href="../view/add_balance_form.php">Adicionar Saldo</a></li>
-                    <li><a href="logout.php">Logout</a></li>
+                    <li><a href="../controller/logout.php">Logout</a></li>
                 </ul>
             </nav> 
             <div>
@@ -46,7 +46,7 @@
                 <a href="#"><?php echo "R$ " . strtoupper($_SESSION['last_updated_balance'])?></a>
                 <a href="party_form.php">Criar Festa</a>
                 <a href="../view/add_balance_form.php">Adicionar Saldo</a>
-                <a href="../view/logout.php">Logout</a>
+                <a href="../controller/logout.php">Logout</a>
             </div>
         </div>
         

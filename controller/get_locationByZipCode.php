@@ -16,26 +16,31 @@ function get_endereco($cep){
   return $xml;
   
 }
+
+
 if(isset($_POST['second_zip']))
   {
-    $cep = $_POST['cep'];
-    $endereco = (get_endereco($cep));
-   
-    if ($endereco->cep = $cep){
+    $cep_number = $_POST['cep'];
+    if(strlen($cep_number) <= 9 && strlen($cep_number) >= 8){
+      $cep = $_POST['cep'];
+      $endereco = (get_endereco($cep));
     
-      $_SESSION['cep'] = $endereco->cep;
-      $_SESSION['rua'] = $endereco->logradouro;
-      $_SESSION['bairro'] = $endereco->bairro;
-      $_SESSION['cidade'] = $endereco->localidade;
-      header('Location: ../view/party_form_pictures.html');
-      exit();
-    }
-    else
-    { 
-      $_SESSION['unavailable_cep'] == TRUE;
-      header('Location: ../view/party_form_zipCode.php');
-      exit();
-    }
+      if ($endereco->cep = $cep){
+      
+        $_SESSION['cep'] = $endereco->cep;
+        $_SESSION['rua'] = $endereco->logradouro;
+        $_SESSION['bairro'] = $endereco->bairro;
+        $_SESSION['cidade'] = $endereco->localidade;
+        header('Location: ../view/party_form_pictures.html');
+        exit();
+      }
+      else
+      { 
+        $_SESSION['unavailable_cep'] == TRUE;
+        header('Location: ../view/party_form_zipCode.php');
+        exit();
+      }  
+    } 
   }
 ?>
 
