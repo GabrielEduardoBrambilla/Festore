@@ -5,9 +5,9 @@ if(isset($_POST['upload_profile'])){
    
    $userName = $_SESSION['user'];  
    echo $userName;
-   $file = $userName."-".$_FILES['file']['name'];
-      $file_loc = $_FILES['file']['tmp_name'];
-   $file_type = $_FILES['file']['type'];
+   $file = $userName."-".$_FILES['profile_img']['name'];
+      $file_loc = $_FILES['profile_img']['tmp_name'];
+   $file_type = $_FILES['profile_img']['type'];
 
    // probably going to make an include right here;
    $folder="../uploads/";
@@ -33,9 +33,9 @@ if(isset($_POST['upload_profile'])){
       {   
       $userName = $_SESSION['user'];  
       echo $userName;
-      $file = $userName."-".$_FILES['file']['name'];
-         $file_loc = $_FILES['file']['tmp_name'];
-      $file_type = $_FILES['file']['type'];
+      $file = $userName."-".$_FILES['background_img']['name'];
+         $file_loc = $_FILES['background_img']['tmp_name'];
+      $file_type = $_FILES['background_img']['type'];
 
       // probably going to make an include right here;
       $folder="../uploads/";
