@@ -4,8 +4,7 @@ include('../model/conection_DB.php');
 if(isset($_POST['upload_profile'])){   
    
    $partyName = $_SESSION['partyName'];  
-   echo $partyName;
-   $file = $partyName."-".$_FILES['profile_img']['name'];
+   $file = $partyName."profile_img"."-".$_FILES['profile_img']['name'];
       $file_loc = $_FILES['profile_img']['tmp_name'];
    $file_type = $_FILES['profile_img']['type'];
 
@@ -16,24 +15,18 @@ if(isset($_POST['upload_profile'])){
    $lowerCase_file_name = strtolower($file);
    
    $final_file=str_replace(' ','-',$lowerCase_file_name);
+   $file_path = $folder.$final_file;
    
-   if(move_uploaded_file($file_loc,$folder.$final_file))
-   {
-      
-   $sql="UPDATE usuario set fotoDePerfilUsuario = '$folder$final_file' where nomeUsuario = '$partyName'  ";
-   mysqli_query($conection,$sql);
-   
-   header("Location: ../view/party_form_pictures_background.html");
-   exit();
-         
-   
- }
+   if(move_uploaded_file($file_loc,$file_path))
+   {      
+    header("Location: ../view/party_form_pictures_background.html");
+    exit();
+   }
 }
  if(isset($_POST['upload_background']))
       {   
-      $userName = $_SESSION['user'];  
-      echo $userName;
-      $file = $userName."-".$_FILES['background_img']['name'];
+        $partyName = $_SESSION['partyName'];  
+      $file = $partyName."background_img"."-".$_FILES['background_img']['name'];
          $file_loc = $_FILES['background_img']['tmp_name'];
       $file_type = $_FILES['background_img']['type'];
 
@@ -44,24 +37,18 @@ if(isset($_POST['upload_profile'])){
       $lowerCase_file_name = strtolower($file);
       
       $final_file=str_replace(' ','-',$lowerCase_file_name);
-      
-      if(move_uploaded_file($file_loc,$folder.$final_file))
+      $file_path = $folder.$final_file;
+
+      if(move_uploaded_file($file_loc,$file_path))
       {
-         
-      $sql="UPDATE usuario set fotoDePerfilUsuario = '$folder$final_file' where nomeUsuario = '$userName'  ";
-      mysqli_query($conection,$sql);
-      
-      header("Location: ../view/party_date.php");
-      exit();
-            
-      
+        $_SESSION['party_background_img'] = $file_path;      
+        header("Location: ../view/party_date.php");
+        exit();   
       }
       else
       {
-      
-      header("Location : ../party_form_pictures.html");
-      exit();
-            
-            }
+        header("Location : ../party_form_pictures.html");
+        exit(); 
+      }
 	}
 ?>

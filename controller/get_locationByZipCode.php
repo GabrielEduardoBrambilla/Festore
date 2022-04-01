@@ -1,10 +1,7 @@
 <?php
 
+include('../controller/verify_login.php');
 $_SESSION['unavailable_cep'] = false;
-$_SESSION['cep'] = false;
-$_SESSION['rua'] = false;
-$_SESSION['bairro'] = false;
-$_SESSION['cidade'] = false;
 
 function get_endereco($cep){
                             
@@ -25,12 +22,17 @@ if(isset($_POST['second_zip']))
       $cep = $_POST['cep'];
       $endereco = (get_endereco($cep));
     
-      if ($endereco->cep = $cep){
-      
-        $_SESSION['cep'] = $endereco->cep;
-        $_SESSION['rua'] = $endereco->logradouro;
-        $_SESSION['bairro'] = $endereco->bairro;
-        $_SESSION['cidade'] = $endereco->localidade;
+      if ($endereco->cep = $cep){ 
+        $cep_xml = $endereco->cep;
+        $logradouro_xml = $endereco->logradouro;
+        $bairro_xml = $endereco->bairro;
+        $localidade_xml = $endereco->localidade;
+
+        $_SESSION['cep'] = $cep_xml->asXML();
+        $_SESSION['rua'] = $logradouro_xml->asXML();
+        $_SESSION['bairro'] = $bairro_xml->asXML();
+        $_SESSION['cidade'] = $localidade_xml->asXML();
+        $_SESSION['numero_casa'] = $_POST['house_number'];
         header('Location: ../view/party_form_pictures.html');
         exit();
       }

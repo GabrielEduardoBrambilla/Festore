@@ -29,8 +29,13 @@
                             <div class="field">
                                 <div class="control">
                                     <input class="input is-large" placeholder="CEP" name="cep" type="text" id="cep" value="" size="10" minlength="8" maxlength="8"
-                                      /></label><br />                    
+                                      />
+                                    </label>
+                                                      
                                 </div>
+                                <br>
+                                <input class="input is-large" placeholder="Numero da casa/complemento" name="house_number" type="text" id="" value="" size="10"  maxlength="8"
+                                      />
                             </div>
                             <button type="submit" name='second_zip'class="button is-block is-link is-large is-fullwidth">Proximo</button>
                         </form>
