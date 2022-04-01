@@ -1,6 +1,6 @@
 <?php
 session_start();
-include("../public_html/model/conection_DB.php");
+include("../model/conection_DB.php");
 $_SESSION['username_in_use'] = false;
 $_SESSION['successfully_registered'] = false;
 
@@ -36,12 +36,12 @@ $row = mysqli_fetch_assoc($result);
 //verify if user name already exist
 if ($row['total'] == 1){
   $_SESSION['username_in_use'] = true;
-  header("Location: ../public_html/view/register_form.php");
+  header("Location: ../view/register_form.php");
   exit();
 }
 if ($age < $min_age){
   $_SESSION['age_not_accepted'] = true;
-  header("Location: ../public_html/view/register_form.php");
+  header("Location: ../view/register_form.php");
   exit();
 }
 
@@ -49,12 +49,12 @@ if ($age < $min_age){
 $sql = "insert into usuario (nomeUsuario, senha, age) values ('$userName', '$password', '$age')";
 if($conection->query($sql) === TRUE){
   $_SESSION['successfully_registered'] = TRUE;
-  header('Location: ../public_html/view/register_form.php');
+  header('Location: ../view/register_form.php');
 }
 
 $conection->close();
  
-header("Location: ../public_html/view/register_form.php");
+header("Location: ../view/register_form.php");
 exit();
 
 ?>

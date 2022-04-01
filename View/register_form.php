@@ -43,7 +43,7 @@ session_start();
                     ?>
                     <div class="notification is-success">
                       <p>Novo usuario registrado com sucesso!</p>
-                      <p><a href="in../public_html/view/index.html">Faça login aqui</a></p>
+                      <p><a href="in../view/index.html">Faça login aqui</a></p>
                     </div>
                     <?php
                     }
@@ -77,7 +77,7 @@ session_start();
                     ?>
 
                     <div class="box">
-                        <form action="../public_html/controller/register_DB.php" method="POST" >
+                        <form action="../controller/register_DB.php" method="POST" >
                             <div class="field">
                                 <div class="control">
                                     <input name="userName" type="text" class="input is-large" placeholder="Nome de Usuario" autofocus>
@@ -99,7 +99,7 @@ session_start();
                             </div>
                             <button type="submit" name="register"class="button is-block is-link is-large is-fullwidth">Cadastrar</button>
                             <hr>
-                            <div type="submit" class="button is-block is-link is-large is-fullwidth"><a href="../public_html/view/index.html">Pagina de login</a></br></div>
+                            <div type="submit" class="button is-block is-link is-large is-fullwidth"><a href="../view/index.html">Pagina de login</a></br></div>
                         </form>
                         
                     </div>

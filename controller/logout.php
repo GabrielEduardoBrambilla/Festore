@@ -1,7 +1,7 @@
 <?php
 session_start();
 session_destroy();
-header('Location: ../public_html/view/index.html');
+header('Location: ../view/index.html');
 exit();
 ?>
 

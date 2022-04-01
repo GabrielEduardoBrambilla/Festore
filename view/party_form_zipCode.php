@@ -1,5 +1,5 @@
 <?php
-        include('../public_html/controller/verify_login.php');
+        include('../controller/verify_login.php');
         $user =  $_SESSION['user'];
 ?>
 
@@ -25,7 +25,7 @@
                     
                     
                     <div class="box">
-                        <form action="../public_html/controller/get_locationByZipCode.php" method="POST">
+                        <form action="../controller/get_locationByZipCode.php" method="POST">
                             <div class="field">
                                 <div class="control">
                                     <input class="input is-large" placeholder="CEP" name="cep" type="text" id="cep" value="" size="10" minlength="8" maxlength="8"
@@ -40,7 +40,7 @@
                             <button type="submit" name='second_zip'class="button is-block is-link is-large is-fullwidth">Proximo</button>
                         </form>
                     
-                                <small><a href="../public_html/view/party_form.php">Voltar</a>
+                                <small><a href="../view/party_form.php">Voltar</a>
                                 </small></br>
                       
                     </div>

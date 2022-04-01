@@ -1,12 +1,12 @@
 <?php
 session_start();
-include('../public_html/model/conection_DB.php');
+include('../model/conection_DB.php');
 
 if(isset($_SESSION['user'])){
-  include('../public_html/controller/logout.php');
+  include('../controller/logout.php');
 }
 if(empty($_POST['user']) || empty($_POST['password'])){
-  header('Location: ../public_html/view/index.html');
+  header('Location: ../view/index.html');
   exit();
 }
 
@@ -20,10 +20,10 @@ $row = mysqli_num_rows($result);
 
 if($row == 1){
   $_SESSION['user'] = $user;
-  header('Location: ../public_html/view/main_panel.php');
+  header('Location: ../view/main_panel.php');
   exit();
 }else{
   $_SESSION['unauthenticated'] = true;
-  header('Location: ../public_html/view/index.html');
+  header('Location: ../view/index.html');
   exit();
 }

@@ -1,7 +1,7 @@
 <?php
-  include('../public_html/controller/verify_login.php');
-  include('../public_html/model/conection_DB.php');
-  include('../public_html/controller/get_locationByZipCode.php');
+  include('../controller/verify_login.php');
+  include('../model/conection_DB.php');
+  include('../controller/get_locationByZipCode.php');
 
   if(isset($_POST['party_confirmed'])){
     // get user id
@@ -38,7 +38,7 @@
     $sql = "Insert into party (nomeFesta, descricao, fotoPerfilFesta, fotoBackground, precoIngresso, dono_Festa, dataEhora, id_Endereco) values ('$partyName','$description','$party_profile_img','$party_background_img','$ticket_price','$id_Usuario[0]','$date$time', '$id_Endereco[0]')";
 
     if($conection->query($sql) === TRUE){
-      header('Location: ../public_html/view/main_panel.php');
+      header('Location: ../view/main_panel.php');
       exit();
     }
   }
@@ -56,11 +56,11 @@
       $_SESSION['ticket_price'] = $ticket_price;
 
   
-      header('Location: ../public_html/view/party_form_zipCode.php');
+      header('Location: ../view/party_form_zipCode.php');
       exit();
     }
   }else{
-    header('Location: ../public_html/view/main_panel.php');
+    header('Location: ../view/main_panel.php');
     exit();
   }
 

@@ -1,5 +1,5 @@
 <?php
-include('../public_html/controller/verify_login.php');
+include('../controller/verify_login.php');
 
 if(isset($_POST['save_datetime']))
 {
@@ -7,7 +7,7 @@ if(isset($_POST['save_datetime']))
     $data->format('d/m/Y H:i:s');
     $_SESSION['data'] =  $data->format('d/m/Y ');
     $_SESSION['time'] = $data->format('H:i:s ');
-    header("Location: ../public_html/view/party_register_confirmation.php");
+    header("Location: ../view/party_register_confirmation.php");
     exit();
 }else
 {

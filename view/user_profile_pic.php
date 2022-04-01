@@ -25,7 +25,7 @@
                         <div class="field">
                             <div class="control">
                                 <form
-                                action="../public_html/controller/upload.php"
+                                action="../controller/upload.php"
                                 method="post"
                                 enctype="multipart/form-data"
                                 >

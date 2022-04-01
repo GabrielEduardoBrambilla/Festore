@@ -1,10 +1,10 @@
 <!DOCTYPE html>
         <?php
-        include('../public_html/controller/verify_login.php');
-        include('../public_html/model/conection_DB.php');
+        include('../controller/verify_login.php');
+        include('../model/conection_DB.php');
         if(! isset($_SESSION['balance_safe_guard']))
         {
-            include('../public_html/controller/get_balance.php');
+            include('../controller/get_balance.php');
             echo $_SESSION['last_updated_balance'];
             exit();
         }
@@ -21,14 +21,14 @@
     </head>
     <body>
         <header>
-            <a class="logo" href="../public_html/view/main_panel.php"><img src="images/logo_new.png" alt="logo"></a>
+            <a class="logo" href="../view/main_panel.php"><img src="images/logo_new.png" alt="logo"></a>
             <nav>
                 
                 <ul class="nav__links">
                     <li><a href="user_profile_pic.php">Perfil</a></li>
                     <li><a href="party_form.php">Criar Festa</a></li>
-                    <li><a href="../public_html/view/add_balance_form.php">Adicionar Saldo</a></li>
-                    <li><a href="../public_html/controller/logout.php">Logout</a></li>
+                    <li><a href="../view/add_balance_form.php">Adicionar Saldo</a></li>
+                    <li><a href="../controller/logout.php">Logout</a></li>
                 </ul>
             </nav> 
             <div>
@@ -45,8 +45,8 @@
                 <a href="#">Perfil</a>
                 <a href="#"><?php echo "R$ " . strtoupper($_SESSION['last_updated_balance'])?></a>
                 <a href="party_form.php">Criar Festa</a>
-                <a href="../public_html/view/add_balance_form.php">Adicionar Saldo</a>
-                <a href="../public_html/controller/logout.php">Logout</a>
+                <a href="../view/add_balance_form.php">Adicionar Saldo</a>
+                <a href="../controller/logout.php">Logout</a>
             </div>
         </div>
 
